@@ -4,7 +4,7 @@
 
 ## Struktūra
 
-- **01_sampled_fpca_distance_models.ipynb**  
+- **01_sampled_fpca_distance_models.ipynb**  *(priedas 3)* 
   Skirtas pradinei spektrinių duomenų analizei, kurioje taikomi atstumu paremti klasifikatoriai bei FPCA pagrindu suformuotos reprezentacijos. Šiame etape įvertinamas paprastesnių metodų veikimas.
 
 - **02_fpca_vs_fpls.ipynb** *(priedas 4)*  
