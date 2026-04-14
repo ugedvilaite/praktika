@@ -1,0 +1,5 @@
+feature_space,representation,distance,model,accuracy,precision,recall,sensitivity,specificity,f1
+FPCA (J=10),Sampled spectra,seuclidean,kNN (k=5),0.851,0.646,0.554,0.554,0.925,0.596
+FPCA (J=20),Sampled spectra,seuclidean,Centroid,0.87,0.735,0.545,0.545,0.951,0.626
+FPCA (J=30),Sampled spectra,seuclidean,Centroid,0.883,0.78,0.571,0.571,0.96,0.66
+FPCA (J=5),Sampled spectra,seuclidean,Weighted kNN (k=5),0.838,0.606,0.536,0.536,0.914,0.569

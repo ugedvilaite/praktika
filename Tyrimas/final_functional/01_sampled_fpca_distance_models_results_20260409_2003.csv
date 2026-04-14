@@ -1,0 +1,97 @@
+representation,feature_space,distance,model,accuracy,precision,recall,sensitivity,specificity,f1
+Sampled spectra,FPCA (J=5),euclidean,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=5),euclidean,Medoid,0.554,0.225,0.509,0.509,0.565,0.312
+Sampled spectra,FPCA (J=5),euclidean,kNN (k=5),0.817,0.576,0.304,0.304,0.945,0.398
+Sampled spectra,FPCA (J=5),euclidean,Weighted kNN (k=5),0.813,0.554,0.321,0.321,0.936,0.407
+Sampled spectra,FPCA (J=5),manhattan,Centroid,0.336,0.204,0.804,0.804,0.22,0.325
+Sampled spectra,FPCA (J=5),manhattan,Medoid,0.565,0.233,0.518,0.518,0.576,0.321
+Sampled spectra,FPCA (J=5),manhattan,kNN (k=5),0.812,0.545,0.321,0.321,0.933,0.404
+Sampled spectra,FPCA (J=5),manhattan,Weighted kNN (k=5),0.815,0.559,0.339,0.339,0.933,0.422
+Sampled spectra,FPCA (J=5),cosine,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=5),cosine,Medoid,0.739,0.368,0.438,0.438,0.814,0.4
+Sampled spectra,FPCA (J=5),cosine,kNN (k=5),0.815,0.547,0.42,0.42,0.914,0.475
+Sampled spectra,FPCA (J=5),cosine,Weighted kNN (k=5),0.803,0.505,0.438,0.438,0.894,0.469
+Sampled spectra,FPCA (J=5),correlation,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=5),correlation,Medoid,0.698,0.287,0.348,0.348,0.785,0.315
+Sampled spectra,FPCA (J=5),correlation,kNN (k=5),0.799,0.494,0.366,0.366,0.907,0.421
+Sampled spectra,FPCA (J=5),correlation,Weighted kNN (k=5),0.762,0.388,0.339,0.339,0.867,0.362
+Sampled spectra,FPCA (J=5),seuclidean,Centroid,0.787,0.462,0.429,0.429,0.876,0.444
+Sampled spectra,FPCA (J=5),seuclidean,Medoid,0.734,0.392,0.616,0.616,0.763,0.479
+Sampled spectra,FPCA (J=5),seuclidean,kNN (k=5),0.837,0.602,0.527,0.527,0.914,0.562
+Sampled spectra,FPCA (J=5),seuclidean,Weighted kNN (k=5),0.838,0.606,0.536,0.536,0.914,0.569
+Sampled spectra,FPCA (J=5),mahalanobis,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=5),mahalanobis,Medoid,0.554,0.225,0.509,0.509,0.565,0.312
+Sampled spectra,FPCA (J=5),mahalanobis,kNN (k=5),0.819,0.578,0.33,0.33,0.94,0.42
+Sampled spectra,FPCA (J=5),mahalanobis,Weighted kNN (k=5),0.824,0.597,0.357,0.357,0.94,0.447
+Sampled spectra,FPCA (J=10),euclidean,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=10),euclidean,Medoid,0.554,0.225,0.509,0.509,0.565,0.312
+Sampled spectra,FPCA (J=10),euclidean,kNN (k=5),0.826,0.609,0.348,0.348,0.945,0.443
+Sampled spectra,FPCA (J=10),euclidean,Weighted kNN (k=5),0.828,0.615,0.357,0.357,0.945,0.452
+Sampled spectra,FPCA (J=10),manhattan,Centroid,0.336,0.204,0.804,0.804,0.22,0.325
+Sampled spectra,FPCA (J=10),manhattan,Medoid,0.568,0.233,0.509,0.509,0.583,0.319
+Sampled spectra,FPCA (J=10),manhattan,kNN (k=5),0.822,0.586,0.366,0.366,0.936,0.451
+Sampled spectra,FPCA (J=10),manhattan,Weighted kNN (k=5),0.822,0.586,0.366,0.366,0.936,0.451
+Sampled spectra,FPCA (J=10),cosine,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=10),cosine,Medoid,0.744,0.373,0.42,0.42,0.825,0.395
+Sampled spectra,FPCA (J=10),cosine,kNN (k=5),0.842,0.626,0.509,0.509,0.925,0.562
+Sampled spectra,FPCA (J=10),cosine,Weighted kNN (k=5),0.833,0.596,0.5,0.5,0.916,0.544
+Sampled spectra,FPCA (J=10),correlation,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=10),correlation,Medoid,0.737,0.357,0.402,0.402,0.82,0.378
+Sampled spectra,FPCA (J=10),correlation,kNN (k=5),0.838,0.611,0.518,0.518,0.918,0.56
+Sampled spectra,FPCA (J=10),correlation,Weighted kNN (k=5),0.835,0.596,0.527,0.527,0.911,0.559
+Sampled spectra,FPCA (J=10),seuclidean,Centroid,0.812,0.53,0.473,0.473,0.896,0.5
+Sampled spectra,FPCA (J=10),seuclidean,Medoid,0.789,0.476,0.625,0.625,0.829,0.541
+Sampled spectra,FPCA (J=10),seuclidean,kNN (k=5),0.851,0.646,0.554,0.554,0.925,0.596
+Sampled spectra,FPCA (J=10),seuclidean,Weighted kNN (k=5),0.851,0.646,0.554,0.554,0.925,0.596
+Sampled spectra,FPCA (J=10),mahalanobis,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=10),mahalanobis,Medoid,0.554,0.225,0.509,0.509,0.565,0.312
+Sampled spectra,FPCA (J=10),mahalanobis,kNN (k=5),0.831,0.627,0.375,0.375,0.945,0.469
+Sampled spectra,FPCA (J=10),mahalanobis,Weighted kNN (k=5),0.835,0.638,0.393,0.393,0.945,0.486
+Sampled spectra,FPCA (J=20),euclidean,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=20),euclidean,Medoid,0.554,0.225,0.509,0.509,0.565,0.312
+Sampled spectra,FPCA (J=20),euclidean,kNN (k=5),0.817,0.574,0.312,0.312,0.942,0.405
+Sampled spectra,FPCA (J=20),euclidean,Weighted kNN (k=5),0.817,0.571,0.321,0.321,0.94,0.411
+Sampled spectra,FPCA (J=20),manhattan,Centroid,0.336,0.204,0.804,0.804,0.22,0.325
+Sampled spectra,FPCA (J=20),manhattan,Medoid,0.574,0.233,0.5,0.5,0.592,0.318
+Sampled spectra,FPCA (J=20),manhattan,kNN (k=5),0.847,0.697,0.411,0.411,0.956,0.517
+Sampled spectra,FPCA (J=20),manhattan,Weighted kNN (k=5),0.847,0.697,0.411,0.411,0.956,0.517
+Sampled spectra,FPCA (J=20),cosine,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=20),cosine,Medoid,0.744,0.369,0.402,0.402,0.829,0.385
+Sampled spectra,FPCA (J=20),cosine,kNN (k=5),0.853,0.675,0.5,0.5,0.94,0.574
+Sampled spectra,FPCA (J=20),cosine,Weighted kNN (k=5),0.853,0.671,0.509,0.509,0.938,0.579
+Sampled spectra,FPCA (J=20),correlation,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=20),correlation,Medoid,0.737,0.359,0.411,0.411,0.818,0.383
+Sampled spectra,FPCA (J=20),correlation,kNN (k=5),0.856,0.674,0.536,0.536,0.936,0.597
+Sampled spectra,FPCA (J=20),correlation,Weighted kNN (k=5),0.858,0.678,0.545,0.545,0.936,0.604
+Sampled spectra,FPCA (J=20),seuclidean,Centroid,0.87,0.735,0.545,0.545,0.951,0.626
+Sampled spectra,FPCA (J=20),seuclidean,Medoid,0.703,0.368,0.688,0.688,0.707,0.48
+Sampled spectra,FPCA (J=20),seuclidean,kNN (k=5),0.877,0.803,0.509,0.509,0.969,0.623
+Sampled spectra,FPCA (J=20),seuclidean,Weighted kNN (k=5),0.877,0.803,0.509,0.509,0.969,0.623
+Sampled spectra,FPCA (J=20),mahalanobis,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=20),mahalanobis,Medoid,0.561,0.229,0.509,0.509,0.574,0.316
+Sampled spectra,FPCA (J=20),mahalanobis,kNN (k=5),0.817,0.563,0.357,0.357,0.931,0.437
+Sampled spectra,FPCA (J=20),mahalanobis,Weighted kNN (k=5),0.819,0.569,0.366,0.366,0.931,0.446
+Sampled spectra,FPCA (J=30),euclidean,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=30),euclidean,Medoid,0.554,0.225,0.509,0.509,0.565,0.312
+Sampled spectra,FPCA (J=30),euclidean,kNN (k=5),0.815,0.567,0.304,0.304,0.942,0.395
+Sampled spectra,FPCA (J=30),euclidean,Weighted kNN (k=5),0.815,0.565,0.312,0.312,0.94,0.402
+Sampled spectra,FPCA (J=30),manhattan,Centroid,0.336,0.204,0.804,0.804,0.22,0.325
+Sampled spectra,FPCA (J=30),manhattan,Medoid,0.568,0.233,0.509,0.509,0.583,0.319
+Sampled spectra,FPCA (J=30),manhattan,kNN (k=5),0.854,0.75,0.402,0.402,0.967,0.523
+Sampled spectra,FPCA (J=30),manhattan,Weighted kNN (k=5),0.854,0.75,0.402,0.402,0.967,0.523
+Sampled spectra,FPCA (J=30),cosine,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=30),cosine,Medoid,0.744,0.369,0.402,0.402,0.829,0.385
+Sampled spectra,FPCA (J=30),cosine,kNN (k=5),0.847,0.659,0.482,0.482,0.938,0.557
+Sampled spectra,FPCA (J=30),cosine,Weighted kNN (k=5),0.847,0.659,0.482,0.482,0.938,0.557
+Sampled spectra,FPCA (J=30),correlation,Centroid,0.307,0.199,0.821,0.821,0.18,0.321
+Sampled spectra,FPCA (J=30),correlation,Medoid,0.741,0.365,0.411,0.411,0.823,0.387
+Sampled spectra,FPCA (J=30),correlation,kNN (k=5),0.854,0.683,0.5,0.5,0.942,0.577
+Sampled spectra,FPCA (J=30),correlation,Weighted kNN (k=5),0.854,0.683,0.5,0.5,0.942,0.577
+Sampled spectra,FPCA (J=30),seuclidean,Centroid,0.883,0.78,0.571,0.571,0.96,0.66
+Sampled spectra,FPCA (J=30),seuclidean,Medoid,0.673,0.35,0.75,0.75,0.654,0.477
+Sampled spectra,FPCA (J=30),seuclidean,kNN (k=5),0.865,0.743,0.491,0.491,0.958,0.591
+Sampled spectra,FPCA (J=30),seuclidean,Weighted kNN (k=5),0.865,0.743,0.491,0.491,0.958,0.591
+Sampled spectra,FPCA (J=30),mahalanobis,Centroid,0.334,0.203,0.804,0.804,0.217,0.324
+Sampled spectra,FPCA (J=30),mahalanobis,Medoid,0.561,0.229,0.509,0.509,0.574,0.316
+Sampled spectra,FPCA (J=30),mahalanobis,kNN (k=5),0.815,0.559,0.339,0.339,0.933,0.422
+Sampled spectra,FPCA (J=30),mahalanobis,Weighted kNN (k=5),0.817,0.565,0.348,0.348,0.933,0.431

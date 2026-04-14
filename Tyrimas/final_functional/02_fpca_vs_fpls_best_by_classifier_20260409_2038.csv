@@ -1,0 +1,6 @@
+Classifier,Best representation,Best J,PR-AUC mean ± std,ROC-AUC mean ± std,F1 mean ± std
+centroid,FPLS,3,0.6555 ± 0.0450,0.8514 ± 0.0226,0.5847 ± 0.0446
+knn,FPLS,5,0.7685 ± 0.0339,0.8928 ± 0.0160,0.7467 ± 0.0263
+linear_svm,FPLS,5,0.8700 ± 0.0304,0.9319 ± 0.0145,0.8113 ± 0.0272
+lr,FPLS,5,0.8693 ± 0.0304,0.9319 ± 0.0145,0.8091 ± 0.0272
+weighted_knn,FPLS,5,0.7948 ± 0.0332,0.8944 ± 0.0163,0.7565 ± 0.0303
