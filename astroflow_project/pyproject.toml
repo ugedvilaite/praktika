@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astroflow"
+version = "0.1.0"
+description = "Astrophysical photometric data analysis tools"
+authors = [
+    { name = "Urtė Gedvilaitė" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "requests",
+    "astropy",
+    "pyvo"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: hits external TAP service"
+]
+
+[project.scripts]
+astroflow-download = "astroflow.cli_download:main"
+astroflow-enrich = "astroflow.cli_enrich:main"
+astroflow-match = "astroflow.cli_tap:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["astroflow*"]
+exclude = ["out_test_download*", "out_gaia_downloads*", "outputs*"]

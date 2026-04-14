@@ -1,0 +1,4 @@
+[console_scripts]
+astroflow-download = astroflow.cli_download:main
+astroflow-enrich = astroflow.cli_enrich:main
+astroflow-match = astroflow.cli_tap:main

@@ -1,0 +1,295 @@
+Metadata-Version: 2.4
+Name: astroflow
+Version: 0.1.0
+Summary: Astrophysical photometric data analysis tools
+Author: Urtė Gedvilaitė
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: astropy
+Requires-Dist: pyvo
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+
+# AstroFlow
+
+AstroFlow is a Python package for accessing and processing Gaia DR3 data via the AIP TAP (Table Access Protocol) service.
+
+The package was developed as part of a practical project focused on building a reusable system for astrophysical photometric data analysis.
+
+---
+
+## Overview
+
+AstroFlow provides two core capabilities:
+
+1. Coordinate → Gaia `source_id` matching  
+2. Data downloading by `source_id`  
+
+The package abstracts TAP and Simple Join Service (SJS) complexity while preserving flexibility and control.
+
+---
+
+## Installation
+
+Clone the repository and install in editable mode:
+
+```bash
+pip install -e .
+```
+
+For development (including tests):
+
+```bash
+pip install -e .[dev]
+```
+
+---
+
+## Authentication
+
+AstroFlow requires an AIP authorization token.
+
+Set it as an environment variable.
+
+### Windows (PowerShell)
+
+```powershell
+$env:GAIA_AIP_TOKEN="Token YOUR_TOKEN_HERE"
+```
+
+### Linux / macOS
+
+```bash
+export GAIA_AIP_TOKEN="Token YOUR_TOKEN_HERE"
+```
+
+---
+
+# 1. Coordinate Matching
+
+AstroFlow allows matching celestial coordinates (RA, DEC) to the nearest Gaia DR3 `source_id`.
+
+The matching is performed using ADQL cone search queries executed through TAP.
+
+## Example
+
+```python
+from astroflow import create_session, nearest_source_from
+
+session = create_session()
+
+result = nearest_source_from(
+    session,
+    "280.97177 43.87557",
+    radius_arcsec=2.0,
+)
+
+print(result)
+```
+
+### Output structure
+
+```python
+{
+    "source_id": 4049114675190544896,
+    "separation_arcsec": 0.12,
+    "matched_ra": 280.97177,
+    "matched_dec": 43.87557
+}
+```
+
+### With quality flag
+
+```python
+from astroflow import nearest_source_with_quality
+
+result = nearest_source_with_quality(
+    session,
+    "280.97177 43.87557",
+)
+```
+
+This adds a match quality indicator (`no_match`, `good`, `ok`, `suspicious`).
+
+---
+
+# 2. Downloading Data by `source_id`
+
+AstroFlow supports two download workflows depending on the requested table.
+
+---
+
+## 2.1 Direct TAP Download (`gaiadr3.gaia_source`)
+
+When downloading rows directly from `gaiadr3.gaia_source`, a TAP `/sync` query is used.
+
+```python
+from astroflow import download_by_ids
+
+df = download_by_ids(
+    [4049114675190544896],
+    table="gaiadr3.gaia_source"
+)
+
+print(df.head())
+```
+
+This returns a pandas DataFrame.
+
+---
+
+## 2.2 TAP Async + Simple Join Service (SJS)
+
+For downloading data from auxiliary tables such as:
+
+- `gaiadr3.xp_continuous_mean_spectrum`
+- other DR3 supplementary tables
+
+AstroFlow performs:
+
+1. A TAP async job to create a temporary ID table  
+2. A Simple Join Service job to join that ID set with the requested table  
+3. Parsing of the resulting VOTable into pandas  
+
+```python
+from astroflow import download_join_by_ids
+
+df = download_join_by_ids(
+    [4049114675190544896],
+    join_table="gaiadr3.xp_continuous_mean_spectrum"
+)
+
+print(df.head())
+```
+
+---
+
+# 3. Chunked Downloads
+
+For larger ID lists, chunked downloading is supported:
+
+```python
+from astroflow import download_join_chunked
+
+df = download_join_chunked(
+    source_ids=id_list,
+    join_table="gaiadr3.xp_continuous_mean_spectrum",
+    chunk_size=1000
+)
+```
+
+Chunking prevents oversized queries and improves robustness for large datasets.
+
+---
+
+# 4. Command Line Interface (CLI)
+
+AstroFlow provides a simple CLI script (`download_main.py`).
+
+## Download from CSV
+
+If your CSV contains a `source_id` column:
+
+```bash
+py download_main.py --csv ID.csv --join-table gaiadr3.gaia_source --csv-out out.csv
+```
+
+## Download XP spectra
+
+```bash
+py download_main.py --csv ID.csv --join-table gaiadr3.xp_continuous_mean_spectrum --csv-out out_xp.csv
+```
+
+## Provide IDs directly
+
+```bash
+py download_main.py --ids 123 456 789 --join-table gaiadr3.gaia_source
+```
+
+---
+
+# Project Structure
+
+```
+astroflow_project/
+│
+├── astroflow/
+│   ├── __init__.py
+│   ├── gaia_tap.py
+│   ├── gaia_download.py
+│   ├── cli_download.py
+│   └── cli_match.py
+│
+├── tests/
+│   ├── test_gaia_tap.py
+│   ├── test_gaia_download.py
+│
+├── examples/
+│   └── mini_cat_coord.csv
+│
+├── pyproject.toml
+├── README.md
+└── .gitignore
+```
+
+---
+
+# Architecture
+
+AstroFlow separates responsibilities clearly:
+
+- `gaia_tap.py`
+  - Coordinate parsing
+  - ADQL cone search
+  - Source ID matching
+
+- `gaia_download.py`
+  - TAP `/sync` queries
+  - TAP `/async` job handling
+  - Simple Join Service integration
+  - UWS job polling
+  - VOTable → pandas conversion
+
+Key design principles:
+
+- Clear public API  
+- Explicit session and authentication handling  
+- Robust async job management  
+- Minimal but sufficient dependencies  
+- Separation between matching and downloading logic  
+
+---
+
+# Dependencies
+
+- requests  
+- pandas  
+- astropy  
+- pyvo  
+
+---
+
+# Testing
+
+Run unit tests:
+
+```bash
+pytest
+```
+
+Run integration tests:
+
+```bash
+pytest -m integration
+```
+
+---
+
+# Purpose
+
+AstroFlow provides a structured and reusable interface for interacting with Gaia DR3 data in Python.
+
+It abstracts TAP and SJS complexity while maintaining transparency of the underlying workflows, making it suitable for astrophysical data analysis pipelines and academic research projects.
